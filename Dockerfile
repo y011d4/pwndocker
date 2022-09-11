@@ -21,16 +21,19 @@ RUN cd /tmp && \
     ./configure --with-python=/usr/bin/python3 && make -j8 && make install && rm /tmp/* -r
 
 COPY --from=glibc_builder64:2.31 /glibc/2.31/64 /glibc/2.31/64
-# COPY --from=glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
+COPY --from=glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
+
+COPY --from=glibc_builder64:2.32 /glibc/2.32/64 /glibc/2.32/64
+COPY --from=glibc_builder32:2.32 /glibc/2.32/32 /glibc/2.32/32
 
 COPY --from=glibc_builder64:2.33 /glibc/2.33/64 /glibc/2.33/64
-# COPY --from=glibc_builder32:2.33 /glibc/2.33/32 /glibc/2.33/32
+COPY --from=glibc_builder32:2.33 /glibc/2.33/32 /glibc/2.33/32
 
 COPY --from=glibc_builder64:2.34 /glibc/2.34/64 /glibc/2.34/64
-# COPY --from=glibc_builder32:2.34 /glibc/2.34/32 /glibc/2.34/32
+COPY --from=glibc_builder32:2.34 /glibc/2.34/32 /glibc/2.34/32
 
 COPY --from=glibc_builder64:2.35 /glibc/2.35/64 /glibc/2.35/64
-# COPY --from=glibc_builder32:2.35 /glibc/2.35/32 /glibc/2.35/32
+COPY --from=glibc_builder32:2.35 /glibc/2.35/32 /glibc/2.35/32
 
 WORKDIR /ctf/work/
 CMD ["/sbin/my_init"]
