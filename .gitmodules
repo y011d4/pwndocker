@@ -1,0 +1,6 @@
+[submodule "glibc_builder32"]
+	path = glibc_builder32
+	url = https://github.com/skysider/glibc_builder32.git
+[submodule "glibc_builder64"]
+	path = glibc_builder64
+	url = https://github.com/skysider/glibc_builder64.git
