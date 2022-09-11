@@ -17,6 +17,9 @@ COPY --from=y011d4/glibc_builder32:2.34 /glibc/2.34/32 /glibc/2.34/32
 COPY --from=y011d4/glibc_builder64:2.35 /glibc/2.35/64 /glibc/2.35/64
 COPY --from=y011d4/glibc_builder32:2.35 /glibc/2.35/32 /glibc/2.35/32
 
+COPY --from=y011d4/glibc_builder64:2.36 /glibc/2.36/64 /glibc/2.36/64
+COPY --from=y011d4/glibc_builder32:2.36 /glibc/2.36/32 /glibc/2.36/32
+
 RUN apt -y update && apt -y upgrade && rm -rf /var/lib/apt/list/*
 RUN pip install -U pip && \
     pip install -U z3-solver angr pwntools
