@@ -2,20 +2,20 @@ FROM skysider/pwndocker:latest
 
 ENV TZ Asia/Tokyo
 
-COPY --from=glibc_builder64:2.31 /glibc/2.31/64 /glibc/2.31/64
-COPY --from=glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
+COPY --from=y011d4/glibc_builder64:2.31 /glibc/2.31/64 /glibc/2.31/64
+COPY --from=y011d4/glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
 
-COPY --from=glibc_builder64:2.32 /glibc/2.32/64 /glibc/2.32/64
-COPY --from=glibc_builder32:2.32 /glibc/2.32/32 /glibc/2.32/32
+COPY --from=y011d4/glibc_builder64:2.32 /glibc/2.32/64 /glibc/2.32/64
+COPY --from=y011d4/glibc_builder32:2.32 /glibc/2.32/32 /glibc/2.32/32
 
-COPY --from=glibc_builder64:2.33 /glibc/2.33/64 /glibc/2.33/64
-COPY --from=glibc_builder32:2.33 /glibc/2.33/32 /glibc/2.33/32
+COPY --from=y011d4/glibc_builder64:2.33 /glibc/2.33/64 /glibc/2.33/64
+COPY --from=y011d4/glibc_builder32:2.33 /glibc/2.33/32 /glibc/2.33/32
 
-COPY --from=glibc_builder64:2.34 /glibc/2.34/64 /glibc/2.34/64
-COPY --from=glibc_builder32:2.34 /glibc/2.34/32 /glibc/2.34/32
+COPY --from=y011d4/glibc_builder64:2.34 /glibc/2.34/64 /glibc/2.34/64
+COPY --from=y011d4/glibc_builder32:2.34 /glibc/2.34/32 /glibc/2.34/32
 
-COPY --from=glibc_builder64:2.35 /glibc/2.35/64 /glibc/2.35/64
-COPY --from=glibc_builder32:2.35 /glibc/2.35/32 /glibc/2.35/32
+COPY --from=y011d4/glibc_builder64:2.35 /glibc/2.35/64 /glibc/2.35/64
+COPY --from=y011d4/glibc_builder32:2.35 /glibc/2.35/32 /glibc/2.35/32
 
 RUN apt -y update && apt -y upgrade && rm -rf /var/lib/apt/list/*
 RUN pip install -U pip && \
