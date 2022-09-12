@@ -7,8 +7,8 @@ services:
       - "/home/y011d4:/ctf/work"
     cap_add:
       - SYS_PTRACE
-    ports:
-      - "23946:23946"
+    # ports:
+    #   - "23946:23946"
     security_opt:
       - seccomp:unconfined
     command: sleep infinity
